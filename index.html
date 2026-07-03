@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCX Commodity Research</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1177965961168456');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1177965961168456&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+font-family:Poppins,sans-serif;
+background:#050505;
+overflow-x:hidden;
+color:#fff;
+}
+
+body::before{
+content:"";
+position:fixed;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:linear-gradient(45deg,#FFD700,#0a0a0a,#00BFFF,#050505);
+background-size:400% 400%;
+animation:bg 15s infinite linear;
+z-index:-2;
+filter:blur(80px);
+}
+
+@keyframes bg{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.logo{
+font-size:48px;
+font-family:Orbitron;
+color:#FFD700;
+text-shadow:0 0 15px gold;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{text-shadow:0 0 10px gold;}
+to{text-shadow:0 0 40px #00BFFF;}
+}
+
+.type{
+font-size:22px;
+margin-top:20px;
+color:#fff;
+height:35px;
+}
+
+.desc{
+max-width:700px;
+margin:25px auto;
+line-height:1.8;
+font-size:17px;
+}
+
+.btn{
+display:inline-block;
+padding:16px 45px;
+background:linear-gradient(45deg,#FFD700,#00BFFF);
+border-radius:50px;
+text-decoration:none;
+color:#000;
+font-weight:bold;
+font-size:18px;
+transition:.4s;
+animation:pulse 1.5s infinite;
+}
+
+.btn:hover{
+transform:scale(1.08);
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 10px gold;}
+50%{box-shadow:0 0 35px #00BFFF;}
+100%{box-shadow:0 0 10px gold;}
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+gap:20px;
+padding:40px;
+}
+
+.card{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+padding:25px;
+border-radius:18px;
+text-align:center;
+transition:.4s;
+border:1px solid rgba(255,255,255,.15);
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px gold;
+}
+
+.counter{
+font-size:36px;
+color:#FFD700;
+font-weight:bold;
+}
+
+footer{
+padding:35px;
+text-align:center;
+font-size:14px;
+color:#ccc;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="logo">
+MCX COMMODITY
+</div>
+
+<div class="type" id="typing"></div>
+
+<div class="desc">
+Professional Commodity Research Community for Gold, Silver, Crude Oil, Copper and other MCX segments. Educational market insights, live updates and research.
+</div>
+
+<a class="btn" href="https://t.me/+_LirSoTU0LRlMWY1">
+JOIN TELEGRAM
+</a>
+
+</section>
+
+<section class="cards">
+
+<div class="card">
+<h2>🥇 Gold</h2>
+<p>Live Research</p>
+</div>
+
+<div class="card">
+<h2>🛢 Crude Oil</h2>
+<p>Market Updates</p>
+</div>
+
+<div class="card">
+<h2>🥈 Silver</h2>
+<p>Analysis</p>
+</div>
+
+<div class="card">
+<h2>🔶 Copper</h2>
+<p>Trade Ideas</p>
+</div>
+
+<div class="card">
+<div class="counter" id="count">0</div>
+<p>Members</p>
+</div>
+
+</section>
+
+<footer>
+
+<b>Disclaimer</b><br><br>
+
+Commodity trading involves market risk. Information provided on this page is for educational and research purposes only and should not be considered investment advice. Please evaluate your own financial situation before making any trading decisions.
+
+</footer>
+
+<script>
+
+const text="Gold • Silver • Crude Oil • Copper • Live Market Research";
+let i=0;
+
+function typing(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typing,70);
+}
+}
+typing();
+
+let c=0;
+
+let counter=setInterval(()=>{
+c+=5000;
+document.getElementById("count").innerHTML=c.toLocaleString()+"+";
+if(c>=500000){
+clearInterval(counter);
+}
+},20);
+
+</script>
+
+</body>
+</html>
